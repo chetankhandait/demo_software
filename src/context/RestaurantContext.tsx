@@ -1,15 +1,13 @@
 // Global state management using React Context and useReducer
 // Handles all restaurant state: tables, orders, and order items
 
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 import { TableStatus, ItemStatus } from '../types';
 import type {
   RestaurantState,
   RestaurantAction,
-  Table,
   OrderItem,
   Order,
-  CartItem,
 } from '../types';
 import { initialTables, ALMOST_FREE_DURATION } from '../data/mockData';
 
@@ -245,7 +243,7 @@ interface RestaurantContextType {
 const RestaurantContext = createContext<RestaurantContextType | undefined>(undefined);
 
 // Provider component
-export function RestaurantProvider({ children }: { children: ReactNode }) {
+export function RestaurantProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(restaurantReducer, initialState);
   
   return (
