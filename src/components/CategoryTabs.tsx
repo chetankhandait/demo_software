@@ -10,7 +10,7 @@ interface CategoryTabsProps {
 
 export function CategoryTabs({ categories, activeCategory, onCategoryChange }: CategoryTabsProps) {
   return (
-    <div className="flex gap-2 p-1.5 bg-slate-100 rounded-2xl overflow-x-auto scrollbar-hide w-fit mx-auto lg:mx-0">
+    <div className="flex gap-2 p-1.5 bg-slate-100 rounded-2xl overflow-x-auto scrollbar-hide w-full sm:w-fit mx-auto lg:mx-0">
       {categories.map(category => {
         const isActive = activeCategory === category;
         return (

@@ -177,8 +177,8 @@ export function CustomerOrder() {
           </div>
         </div>
 
-        {/* Cart Section */}
-        <div className="lg:col-span-1">
+        {/* Cart Section - Desktop */}
+        <div className="hidden lg:block lg:col-span-1">
           <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
             <h2 className="text-xl font-bold text-gray-800 mb-4">Your Cart</h2>
 
@@ -243,6 +243,32 @@ export function CustomerOrder() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Sticky Cart Bar */}
+      {cart.length > 0 && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] lg:hidden z-50">
+          <div className="flex items-center justify-between gap-4 max-w-7xl mx-auto">
+            <div>
+              <p className="text-xs text-gray-500">{totalItems} items</p>
+              <p className="text-lg font-bold text-gray-800">₹{total}</p>
+            </div>
+            <button
+              onClick={handlePlaceOrder}
+              disabled={isProcessing}
+              className={`
+                px-6 py-3 rounded-xl font-bold
+                transition-all duration-300
+                ${isProcessing
+                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  : 'bg-green-600 text-white hover:bg-green-700'
+                }
+              `}
+            >
+              {isProcessing ? 'Processing' : 'View Cart & Pay'}
+            </button>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 }

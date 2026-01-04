@@ -33,7 +33,7 @@ export function HostDashboard() {
         <h2 className="text-xs font-bold text-slate-400 mb-4 uppercase tracking-wider">
           Table Status Legend
         </h2>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 overflow-x-auto pb-2 sm:pb-0 no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0">
           <StatusBadge color="bg-white border-emerald-200 shadow-emerald-500/10 text-emerald-700" dot="bg-emerald-500" label="Available" count={statusCounts.free} />
           <StatusBadge color="bg-amber-50 border-amber-200 shadow-amber-500/10 text-amber-900" dot="bg-amber-500" label="Occupied" count={statusCounts.occupied} />
           <StatusBadge color="bg-blue-50 border-blue-200 shadow-blue-500/10 text-blue-900" dot="bg-blue-500" label="Cooking" count={statusCounts.cooking} />

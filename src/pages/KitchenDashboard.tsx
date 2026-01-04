@@ -40,7 +40,7 @@ export function KitchenDashboard() {
   return (
     <Layout title="Kitchen Display System">
       {/* Stats Header */}
-      <div className="grid grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
         <div className="glass p-4 rounded-2xl flex items-center justify-between border-l-4 border-l-slate-200">
           <div>
             <div className="text-slate-500 text-xs font-bold uppercase tracking-wider">Pending</div>
